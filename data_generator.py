@@ -11,6 +11,8 @@ import cv2
 import gc
 import os 
 import matplotlib as mtl
+import sleep
+import progressbar
 
 def colorFader(c1,c2,mix=0): 
     c1=np.array(mtl.colors.to_rgb(c1))
@@ -80,8 +82,7 @@ else:
     
 data_codings = np.load("data/train_codings.npy")
 
-from PIL import Image
-import cv2
+
 images     = np.zeros((4000,128,128,3))
 bar = progressbar.ProgressBar(maxval=data_codings.shape[0], \
     widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
