@@ -4,44 +4,19 @@ import matplotlib.path as mpath
 import matplotlib.lines as mlines
 import matplotlib.patches as mpatches
 from matplotlib.collections import PatchCollection
-import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from numpy.random import choice 
-import matplotlib.pyplot as plt
-import numpy as np
-from PIL import Image
-import tensorflow as tf
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import Ridge
-from sklearn.utils import check_random_state
-#from classifier import CNN
-import matplotlib.gridspec as gridspec
-import matplotlib.patches as patches 
-from tensorflow.keras import optimizers
-import matplotlib.pyplot as plt
-import numpy as np
-import matplotlib.path as mpath
-import matplotlib.lines as mlines
-import matplotlib.patches as mpatches
-from matplotlib.collections import PatchCollection
-import matplotlib as mtl
-from numpy.random import choice 
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import numpy as np
 from PIL import Image
 import cv2
 import gc
 import os 
-def colorFader(c1,c2,mix=0): #fade (linear interpolate) from color c1 (at mix=0) to c2 (mix=1)
+
+
+
+def colorFader(c1,c2,mix=0): 
     c1=np.array(mpl.colors.to_rgb(c1))
     c2=np.array(mpl.colors.to_rgb(c2))
     return mpl.colors.to_hex((1-mix)*c1 + mix*c2)
-
-
-
-
-
 
 
 def plot_flower(length, width, s_l, s_w, petal_color, img_name):
@@ -85,8 +60,9 @@ def plot_flower(length, width, s_l, s_w, petal_color, img_name):
   ax.set_xlim((-1,1))
   ax.set_ylim((-1,1))
   ax.axis('off')
-  ax.tick_params(axis='both', left='off', top='off', right='off', bottom='off', labelleft='off', labeltop='off', labelright='off', labelbottom='off')
-  fig.savefig(path + "/" + str(img_name) + '.png', dpi=100, bbox_inches='tight', pad_inches=0.0)
+  ax.tick_params(axis = 'both', left = 'off', top = 'off', right = 'off', bottom = 'off',
+                 labelleft = 'off', labeltop = 'off', labelright = 'off', labelbottom = 'off')
+  fig.savefig(path + "/" + str(img_name) + '.png', dpi = 100, bbox_inches = 'tight', pad_inches = 0.0)
 
   plt.clf()
   plt.close()
@@ -103,7 +79,7 @@ except OSError:
 else:
     print ("Successfully created the directory %s " % path)
     
-data_codings = np.load("dc_second.npy")
+data_codings = np.load("train_codings.npy")
 
 from PIL import Image
 import cv2
