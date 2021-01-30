@@ -79,7 +79,7 @@ except OSError:
 else:
     print ("Successfully created the directory %s " % path)
     
-data_codings = np.load("train_codings.npy")
+data_codings = np.load("data/train_codings.npy")
 
 from PIL import Image
 import cv2
