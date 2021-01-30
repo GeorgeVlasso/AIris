@@ -11,13 +11,6 @@ import cv2
 import gc
 import os 
 import matplotlib as mtl
-import progressbar
-from time import sleep
-
-for i in xrange(20):
-    bar.update(i+1)
-    sleep(0.1)
-bar.finish()
 
 def colorFader(c1,c2,mix=0): 
     c1=np.array(mtl.colors.to_rgb(c1))
