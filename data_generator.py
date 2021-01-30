@@ -11,7 +11,13 @@ import cv2
 import gc
 import os 
 import matplotlib as mtl
+import progressbar
+from time import sleep
 
+for i in xrange(20):
+    bar.update(i+1)
+    sleep(0.1)
+bar.finish()
 
 def colorFader(c1,c2,mix=0): 
     c1=np.array(mtl.colors.to_rgb(c1))
@@ -84,9 +90,11 @@ data_codings = np.load("data/train_codings.npy")
 from PIL import Image
 import cv2
 images     = np.zeros((4000,128,128,3))
-
+bar = progressbar.ProgressBar(maxval=data_codings.shape[0], \
+    widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
+bar.start()
 for i in range(0,data_codings.shape[0]):
-  print(i)
+  
   k1 = data_codings[i,0]
   k2 = data_codings[i,1]
   k3 = data_codings[i,2]
@@ -100,5 +108,7 @@ for i in range(0,data_codings.shape[0]):
 
   img = cv2.cvtColor(im, cv2.COLOR_BGRA2BGR).reshape((1,128,128,3))/255.
   images[i,:,:,:] = img
-  
+  bar.update(i+1)
+  sleep(0.1)
+bar.finish()  
 np.savez_compressed("train_images.npy", images)      
