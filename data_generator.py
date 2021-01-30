@@ -10,13 +10,13 @@ from PIL import Image
 import cv2
 import gc
 import os 
-
+import matplotlib as mtl
 
 
 def colorFader(c1,c2,mix=0): 
-    c1=np.array(mpl.colors.to_rgb(c1))
-    c2=np.array(mpl.colors.to_rgb(c2))
-    return mpl.colors.to_hex((1-mix)*c1 + mix*c2)
+    c1=np.array(mtl.colors.to_rgb(c1))
+    c2=np.array(mtl.colors.to_rgb(c2))
+    return mtl.colors.to_hex((1-mix)*c1 + mix*c2)
 
 
 def plot_flower(length, width, s_l, s_w, petal_color, img_name):
