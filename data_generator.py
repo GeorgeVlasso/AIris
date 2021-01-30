@@ -11,7 +11,7 @@ import cv2
 import gc
 import os 
 import matplotlib as mtl
-import sleep
+from time import sleep
 import progressbar
 
 def colorFader(c1,c2,mix=0): 
