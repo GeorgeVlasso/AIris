@@ -21,4 +21,4 @@ Please consider citing us when using the dataset in your research.
 Python 3, matplotlib 3.2.2, PIL 7.0.0, numpy 1.19.5
 
 
-!python3 data_generation.py
+!python3 data_generator.py
